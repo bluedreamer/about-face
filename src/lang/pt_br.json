@@ -22,5 +22,7 @@
     "about-face.options.indicator-sprite.hint" : "Mudar o icone indicador (requer reinicialização)",
     "about-face.options.indicator-sprite.choices.normal" : "Indicador Normal",
     "about-face.options.indicator-sprite.choices.large" : "Indicador Grande",
-    "about-face.options.indicator-sprite.choices.hex" : "Hex Indicator (Only works on Hex Columns)"
+    "about-face.options.indicator-sprite.choices.hex" : "Hex Indicator (Only works on Hex Columns)",
+    "about-face.options.move-autorotation.name": "Automatic rotation on move",
+    "about-face.options.move-autorotation.hint": "If enabled, tokens and their directional indicators will automatically rotate in the direction of movement. If disabled, only manual rotation is possible."
 }

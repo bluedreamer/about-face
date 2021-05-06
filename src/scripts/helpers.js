@@ -14,8 +14,8 @@ export function replaceSelectChoices(select, choices) {
     }
 }
 
-export async function getTokenOwner(token, includeGM=false) {
-    let owners = getKeyByValue(token.actor.data.permission,3);
+export async function getTokenOwner(token, includeGM = false) {
+    let owners = getKeyByValue(token.actor.data.permission, 3);
     let ret = [];
     for (let y = 0; y < owners.length; y++) {
         let u = await Users.instance.get(owners[y]);
@@ -23,8 +23,13 @@ export async function getTokenOwner(token, includeGM=false) {
             ret.push(u);
             continue;
         } else {
-            if (!u) { ret.push(u);continue;}
-            if (!u.isGM) { ret.push(u);}
+            if (!u) {
+                ret.push(u);
+                continue;
+            }
+            if (!u.isGM) {
+                ret.push(u);
+            }
         }
     }
     return ret;
@@ -39,7 +44,7 @@ export async function getTokenOwner(token, includeGM=false) {
 export const isFirstActiveGM = () => {
     const firstGm = game.users.find((u) => u.isGM && u.active);
     if (firstGm && game.user === firstGm) {
-      return true;
+        return true;
     }
     return false;
   };
@@ -54,7 +59,7 @@ export const isFirstActiveGM = () => {
 export function getRotationDegrees(dX = null, dY = null, dir = null, isHexColumn = false) {
     var rotation;
     let hexOffset = isHexColumn ? 15 : 0;
-    
+
     if ((dX == 0 && dY < 0) || dir == "up") rotation = 180; // up
     else if ((dX == 0 && dY > 0) || dir == "down") rotation = 0; // down
     else if ((dX > 0 && dY == 0) || dir == "right") rotation = 270 - (hexOffset * 2); // to the right (hex columns can't go right/left)
